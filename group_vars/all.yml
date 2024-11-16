@@ -1,0 +1,8 @@
+mysql_user: "{{ mysql_user }}"
+mysql_password: "{{ mysql_password }}"
+mysql_database: redmine
+mysql_root_password: "{{ mysql_root_password }}"
+
+redmine_db_mysql: redmine-mysql
+redmine_db_username: "{{ mysql_user }}"
+redmine_db_password: "{{ mysql_password }}"
