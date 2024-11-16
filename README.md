@@ -22,9 +22,12 @@
 Перед началом убедитесь, что выполнены следующие условия:
 
 1. Установлен [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
-2.    git clone https://github.com/AslanFazyltegi/devops-for-programmers-project-76.git
-      cd devops-for-programmers-project-76
-      make prepare
+2.  
+  git clone https://github.com/AslanFazyltegi/devops-for-programmers-project-76.git
+
+  cd devops-for-programmers-project-76
+
+  make prepare
 
 ---
 
