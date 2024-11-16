@@ -27,8 +27,6 @@
 
   cd devops-for-programmers-project-76
 
-  make prepare
-
 ---
 
 ## Подготовка серверов
@@ -39,4 +37,5 @@
 
 	или
 
-    make prepare  Н авашем локальном кмопьютере
+    cd devops-for-programmers-project-76
+    make prepare 
