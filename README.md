@@ -33,9 +33,24 @@
 
    Запустите плейбук для подготовки серверов:
 
-    ansible-playbook -i inventory.ini playbook.yml
+    ansible-playbook -i inventory.ini playbook-prepare.yml
 
 	или
 
     cd devops-for-programmers-project-76
     make prepare 
+
+
+##   Деплой проекта
+
+
+	ansible-playbook -i inventory.ini playbook-deploy.yml --tags deploy --vault-password-file vault-password
+
+или
+
+	make deploy
+
+
+##  Ссылка проекта
+
+	https://hexletlab.adizit.kz/
