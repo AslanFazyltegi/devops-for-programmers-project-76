@@ -15,12 +15,14 @@
         name: docker.io
         state: present
         update_cache: yes
+      tags: prepare
 
     # Install Docker Python library
     - name: Install Docker Python library
       ansible.builtin.command:
         cmd: "pip3 install docker"
         creates: /usr/local/bin/docker
+      tags: prepare
 
     # Create environment file from template (for Redmine deployment)
     - name: Create environment file from template
@@ -30,6 +32,7 @@
         owner: admin
         group: admin
         mode: 0644
+      tags: deploy
 
     # Create Dockerfile file from template
     - name: Create Dockerfile file from template
@@ -39,17 +42,20 @@
         owner: admin
         group: admin
         mode: 0644
+      tags: deploy
 
     # Redmine Image Building
     - name: Redmine Image Building
       shell: |
         cd /home/admin && docker build -t redmine:yandex-cloud .
+      tags: deploy
 
     # Ensure Docker network exists
     - name: Ensure Docker network exists
       community.docker.docker_network:
         name: redmine-network
         state: present
+      tags: deploy
 
     # Run Redmine container
     - name: Run Redmine container
@@ -63,6 +69,7 @@
           - "3000:3000"
         networks:
           - name: redmine-network
+      tags: deploy
 
 - name: Installing and starting DataDog on webservers only
   hosts: webservers

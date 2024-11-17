@@ -1,5 +1,5 @@
-vault-password
 playbook-prepare.yml
 playbook-deploy.yml
 playbook-deploy-cloud.yml
 playbook-datadog.yml
+vault-password
