@@ -2,8 +2,6 @@
 - name: Prepare servers for deployment, deploy Redmine and configure DataDog
   hosts: all
   become: true
-  vars_files:
-    - group_vars/webservers/vault.yml
 
   roles:
     - geerlingguy.pip
