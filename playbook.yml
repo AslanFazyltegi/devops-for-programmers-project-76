@@ -108,9 +108,9 @@
               tags:
                 - "env:production"
                 - "service:app_health"
-    owner: root
-    group: root
-    mode: "0644"
+        owner: root
+        group: root
+        mode: "0644"
 
     - name: Restarting DataDog
       service:
