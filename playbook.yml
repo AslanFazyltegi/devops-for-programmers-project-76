@@ -45,7 +45,9 @@
     # Redmine Image Building
     - name: Redmine Image Building
       shell: |
-        cd /root && docker build -t redmine:yandex-cloud .
+        cd /root && docker build -t redmine:yandex-cloud . && touch /root/redmine-built.flag
+      args:
+        creates: /root/redmine-built.flag
       tags: deploy
 
     # Ensure Docker network exists
@@ -106,6 +108,9 @@
               tags:
                 - "env:production"
                 - "service:app_health"
+    owner: root
+    group: root
+    mode: "0644"
 
     - name: Restarting DataDog
       service:
