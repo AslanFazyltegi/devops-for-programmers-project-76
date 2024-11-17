@@ -3,6 +3,10 @@ mysql_password: "{{ mysql_password }}"
 mysql_database: redmine
 mysql_root_password: "{{ mysql_root_password }}"
 
-redmine_db_mysql: redmine-mysql
+redmine_db_mysql: rc1d-njkxvnkkrrs34da3.mdb.yandexcloud.net
 redmine_db_username: "{{ mysql_user }}"
 redmine_db_password: "{{ mysql_password }}"
+redmine_db_database: redmine
+redmine_db_adapter: mysql2
+redmine_db_ssl_ca: /home/redmine/.mysql/root.crt
+redmine_db_ssl_mode: verify_identity

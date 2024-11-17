@@ -4,6 +4,8 @@
   become: true
   roles:
     - geerlingguy.pip
+  vars_files:
+    - group_vars/webservers/vault.yml
 
   tasks:
     - name: Install Docker Engine
@@ -15,3 +17,6 @@
       ansible.builtin.command:
         cmd: "pip3 install docker"
         creates: /usr/local/bin/docker
+    - name: Update the community.docker collection
+      ansible.builtin.shell:
+        cmd: ansible-galaxy collection install community.docker --upgrade
